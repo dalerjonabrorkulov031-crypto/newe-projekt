@@ -1,69 +1,67 @@
-import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.js</code> file.
-          </h1>
+    <main className={styles.page}>
+      <header className={styles.header}>
+        <div className={styles.logo}>Aster</div>
+        <nav className={styles.nav}>
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/about">Contact</Link>
+        </nav>
+      </header>
+
+      <section className={styles.hero}>
+        <div className={styles.heroText}>
+          <span className={styles.badge}>Small modern studio</span>
+          <h1>Clean design for your next big idea.</h1>
           <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+            We help brands and businesses create simple, elegant digital experiences
+            that feel personal and professional.
           </p>
+          <div className={styles.actions}>
+            <Link href="/about" className={styles.primaryBtn}>
+              Learn More
+            </Link>
+            <Link href="/" className={styles.secondaryBtn}>
+              View Work
+            </Link>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className={styles.heroCard}>
+          <div className={styles.cardTop}>
+            <span className={styles.dot} />
+            <span>Brand Launch</span>
+          </div>
+          <h2>Minimal style, maximum impact.</h2>
+          <ul>
+            <li>Simple layouts</li>
+            <li>Warm and friendly colors</li>
+            <li>Fast and clear messaging</li>
+          </ul>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className={styles.features}>
+        <article className={styles.featureCard}>
+          <span>01</span>
+          <h3>Strategy</h3>
+          <p>Thoughtful planning for small, focused business growth.</p>
+        </article>
+        <article className={styles.featureCard}>
+          <span>02</span>
+          <h3>Design</h3>
+          <p>Clean visuals built with white, cream, and soft contrast.</p>
+        </article>
+        <article className={styles.featureCard}>
+          <span>03</span>
+          <h3>Launch</h3>
+          <p>Simple tools and polished presentation for your audience.</p>
+        </article>
+      </section>
+    </main>
   );
 }
